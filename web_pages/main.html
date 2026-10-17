@@ -1,12 +1,87 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title> Page Title for main html!</title>
-        <link rel="stylesheet" href="css/styless.css">
-    </head>
-    <body>
-        <h1>Первый заголовок для Main файла html </h1>
-        <p>Мой первый параграф</p>
-        <p>Мой второй параграф</p>
-    </body>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styless.css">
+    <title>Регистрация</title>
+  </head>
+  <body>
+    <header>
+      <h1>Регистрация на сайте</h1>
+    </header>
+
+    <main>
+      <section class="registration-form-wrapper">
+        <form action="/register" method="post">
+          <!-- Имя -->
+          <div class="form-group">
+            <label for="username">Имя пользователя</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              required
+              minlength="3"
+              maxlength="30"
+              placeholder="Придумайте имя"
+            >
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="name@example.com"
+            >
+          </div>
+
+          <!-- Пароль -->
+          <div class="form-group">
+            <label for="password">Пароль</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              minlength="8"
+              placeholder="Минимум 8 символов"
+            >
+          </div>
+
+          <!-- Подтверждение пароля -->
+          <div class="form-group">
+            <label for="confirm-password">Подтвердите пароль</label>
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm_password"
+              required
+              minlength="8"
+              placeholder="Повторите пароль"
+            >
+          </div>
+
+          <!-- Согласие с условиями -->
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms" class="inline-label">
+              Я согласен с <a href="/terms" target="_blank">условиями использования</a> и политикой конфиденциальности
+            </label>
+          </div>
+
+          <!-- Кнопка отправки -->
+          <button type="submit" class="submit-btn">Зарегистрироваться</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>Уже есть аккаунт? <a href="/login">Войдите</a></p>
+    </footer>
+  </body>
 </html>
